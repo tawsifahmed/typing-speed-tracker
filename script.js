@@ -27,6 +27,7 @@ const typeController = (e) => {
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
     return display.removeChild(display.lastChild);
+
   }
 
   // these are the valid character we are allowing to type
@@ -46,6 +47,7 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    errorCount++;
   }
 
   // check if given question text is equal to user typed text
@@ -137,3 +139,5 @@ setInterval(() => {
 
   document.getElementById("show-time").innerHTML = `${Math.round(startTime) ? Math.round(timeSpent) : 0} seconds`;
 }, 1000);
+
+
