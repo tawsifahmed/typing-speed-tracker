@@ -39,6 +39,13 @@
 
   <script src="history.js"></script>
   <script src="script.js"></script>
+  <script>
+    window.addEventListener('keydown', function (e) {
+      if (e.keyCode == 32 && e.target == document.body) {
+        e.preventDefault();
+      }
+    });
+  </script>
 </body>
 
 </html>
