@@ -150,8 +150,10 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 24px;
+  grid-column-gap: 24px;
   justify-content: space-around;
 }
 
@@ -160,6 +162,7 @@ button {
   height: 100%;
   padding: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
@@ -185,10 +188,17 @@ button {
   top: 0;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 688px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
+  }
+
+  #histories {
+    grid-template-columns: repeat(1, 1fr);
+    flex-direction: column;
+
+    align-items: center;
   }
 
   .card {
